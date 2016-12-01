@@ -1,4 +1,3 @@
 # 前端笔记
 
-学习到新的知识一下子就忘记了
-还是做个小笔记吧
+- cache-control [link](https://github.com/mingjiu/frontendnote/blob/master/cache.md)
