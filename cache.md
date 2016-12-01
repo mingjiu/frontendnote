@@ -48,7 +48,20 @@ if-modified-since: Sun, 18 Jan 2015 11:59:02 GMT
 #### 其他缓存
 expires, 这个是 http 1.0 的内容，其值是一个到期时间。
 
+#### 用户行为与缓存关系
+
+操作 | Expires/Cache-Control | Last-Modified/Etag
+---|---|---
+**地址栏回车** | YES | YES
+**页面链接跳转** | YES | YES
+**新开窗口** | YES | YES
+**前进、后退** | YES | YES
+**F5刷新** | NO | YES
+**Ctrl+F5刷新** | NO | NO
 
 
 
+
+
+        
 remark: 不知道会不会有项目，前端的资源的加载时独立一个服务器？
