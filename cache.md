@@ -65,3 +65,4 @@ expires, 这个是 http 1.0 的内容，其值是一个到期时间。
 
         
 remark: 不知道会不会有项目，前端的资源的加载时独立一个服务器？
+       研究一段时间，还真有类似的概念[node直出](https://github.com/joeyguo/blog/issues/8)
