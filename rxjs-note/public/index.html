@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RxJS demo</title>
+</head>
+<style>
+body{
+    width: 100%;
+    display: inline-block;
+}
+div{
+    float: left;
+    width: 25%;
+    min-height: 600px;
+}
+</style>
+<body>
+<div id="div1" style="background:#dedede"></div>
+<div id="div2" style="background:#b1b1b1"></div>
+<div id="div3" style="background:#7d7d7d"></div>
+<div id="div4" style="background:#ccb3b3"></div>
+</body>
+<script type="text/javascript" src="rx-js/rx.all.min.js"></script>
+<script type="text/javascript">
+var Observer = Rx.Observer.create(
+    function(a){console.log('Next:', a)},
+    function(a){console.log('Error:', a)},
+    function(){console.log('Completed')}
+);
+var Observable = Rx.Observable.create(function(observer){
+
+});
+var sub = Observable.subscribe(Observer);
+
+
+
+
+
+// function loop(a){
+//     var ajax = new XMLHttpRequest();
+//     ajax.onreadystatechange = ok(ajax);
+//     ajax.open('GET', 'api?type='+a+'&count=5');
+//     ajax.send();
+//     // ajax.end();
+// }
+// function ok(ajax){
+//     console.log(ajax.responseText);
+//     Observer.next(ajax.responseText);
+// }
+</script>
+</html>
