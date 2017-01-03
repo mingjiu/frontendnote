@@ -1,0 +1,25 @@
+.date-tabs {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 52px;
+  text-align: center;
+  height: 36px;
+  font-size: 12px; }
+
+.date-tabs .tab {
+  float: left;
+  width: 16.66%;
+  position: relative; }
+
+.date-tabs .tab .bg {
+  width: 80%;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 13px;
+  margin: 0 auto;
+  color: #91989e; }
+
+.date-tabs .tab.current .bg, .date-tabs .tab:active .bg {
+  background: #3585c2;
+  color: #fff; }

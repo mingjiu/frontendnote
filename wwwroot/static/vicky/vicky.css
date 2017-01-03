@@ -1,0 +1,23 @@
+html,body, div,p{
+	margin: 0;
+}
+html,body{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.vicky{
+	width: 100%;
+	height: 100%;
+	background-image: url(./vicky.jpg);
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.danmu{
+	position: absolute;
+	top: 0;
+	color: #fff;
+}
+

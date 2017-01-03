@@ -1,0 +1,102 @@
+body{
+    -webkit-user-select:none;
+    user-select:none;
+}
+.wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.searchbar-result{
+	position: absolute;
+	width: 100%;
+	background-color: #fff;
+	z-index: 99999;
+	margin-top: 0;
+	background-color: rgba(0,0,0,.3);
+	height: 100%;
+}
+.searchbar-result .weui-cell{
+	background-color: #fff;
+}
+.weui-cell.weui-cell_access:active{
+	background-color: #efeff4;
+}
+.line-cont{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+}
+.line-cont::after{
+	content: '->';
+	position: absolute;
+	font-size: 16px;
+	height: 44px;
+	line-height: 44px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	color: #666;
+}
+.line-cont::before{
+	content: '';
+	height: 1px;
+	background-color: #c8c8cd;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	transform: scaleY(0.5);
+	-webkit-transform: scaleY(0.5);
+}
+.line-cont .line-name{
+	text-align: center;
+	width: 50%;
+	float: left;
+	font-size: 16px;
+	height: 44px;
+	line-height: 44px;
+	color: #666;
+}
+.line-info{
+	text-align: center;
+	font-size: 14px;
+	line-height: 44px;
+	height: 44px;
+	color: #666;
+}
+.station-list{
+	position: absolute;
+	top: 88px;
+	bottom: 44px;
+	overflow: auto;
+	width: 100%;
+	margin-top: 0;
+}
+.weui-cells.station-list::after{
+	border: 0;
+}
+.weui-tabbar__label{
+	height:44px;
+	line-height:44px;
+	font-size:14px;
+}
+.weui-tabbar__label:active{
+	background-color: #efeff4;
+}
+.weui-tabbar .tab{
+    float: left;
+    width: 100%;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #09bb07
+}
+.weui-tabbar .tab:active{
+    background-color: #efeff4;
+
+}

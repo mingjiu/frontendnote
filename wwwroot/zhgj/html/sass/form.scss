@@ -1,0 +1,19 @@
+.form{
+    position: relative;
+}
+.form .item{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 1.1rem 0;
+}
+.form .item .label{
+    color: #9c9c9c;
+    float: left;
+    width: 45%;
+    text-indent: 1.4rem;
+}
+.form .item .count{
+    width: 55%;
+    float: left;
+}

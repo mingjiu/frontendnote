@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>珠海公交</title>
+<meta name="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/weui.min.css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<script>
+var scaleRate = document.documentElement.clientWidth / 320 ;
+document.querySelector('meta[name="viewport"]').setAttribute("content", "width=320, initial-scale=" + scaleRate + ", maximum-scale=" + scaleRate + ", user-scalable=no");
+</script>
+<body>
+<div class="wrapper">
+    <div class="page__bd" style="height: 100%;">
+        <div class="weui-tab">
+            <div class="weui-tab__panel" id="mainPannel" style="display:2none;">
+
+                <div id="searchPanel">
+                    <div class="weui-search-bar weui-search-bar_focusing" id="searchBar">
+                        <div class="weui-search-bar__form">
+                            <div class="weui-search-bar__box">
+                                <i class="weui-icon-search"></i>
+                                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="请输入您要查询的线路，如609">
+                                <a href="javascript:;" class="weui-icon-clear" id="clearSearch"></a>
+                            </div>
+                            <label class="weui-search-bar__label" id="searchText">
+                                <i class="weui-icon-search"></i>
+                                <span>搜索</span>
+                            </label>
+                        </div>
+                        <a href="javascript:" class="weui-search-bar__cancel-btn" id="toSearch">搜索</a>
+                    </div>
+                    <div class="weui-cells searchbar-result" id="searchResult" style="display:none;">
+
+                    </div>
+                    <div id="realtimePanel" style="display:none;">
+                         <div class="line-cont">
+                            <div class="line-name from-station">jingan</div>
+                            <div class="line-name to-station">gongbei</div>
+                        </div>
+                        <!-- <div class="line-info">首班车： {{dd}}，末班车：{{}}，票价：{{}}元</div> -->
+
+                        <div class="weui-cells station-list">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-tabbar">
+            <!-- <a id="realtimeUpdate" href="javascript:;" class="weui-tabbar__item weui-bar__item_on" style="padding:0;">
+                <p class="weui-tabbar__label" style="">更新实时车辆</p>
+            </a> -->
+            <!-- <div class="tab" id="lineAround">换向</div> -->
+            <div class="tab" id="realtimeUpdate">更新实时车辆</div>
+        </div>
+    </div>
+</div>
+</body>
+<script id="tplSearch" type="text/html">
+{{each data as item}}
+    <div class="weui-cell weui-cell_access">
+        <div class="weui-cell__bd">
+            <p lineid="{{item.Id}}" linename="{{item.Name}}" fromstation="{{item.FromStation}}" tostation="{{item.ToStation}}">{{item.FromStation}} -> {{item.ToStation}}</p>
+        </div>
+        <div class="weui-cell__ft">{{item.Name}}</div>
+    </div>
+{{/each}}
+</script>
+<script type="text/html" id="tplRealtime">
+{{each data as item index}}
+<div class="weui-cell" stationid="{{item.Id}}" stationname="{{item.Name}}">
+    <div class="weui-cell__bd">
+        <p>{{index+1}} {{item.Name}}</p>
+    </div>
+    <div class="weui-cell__ft"></div>
+</div>
+{{/each}}
+</script>
+<script type="text/javascript" src="libs/zepto.min.js"></script>
+<script type="text/javascript" src="libs/arttemplate.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>

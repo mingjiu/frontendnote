@@ -1,0 +1,29 @@
+.header {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background-color: #3183cc;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0; }
+
+.header .action {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  top: 50%; }
+
+.header .action:active {
+  opacity: 0.3; }
+
+.header .action .action-img {
+  width: 18px;
+  height: 18px; }

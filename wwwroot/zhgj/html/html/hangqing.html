@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <title>行情</title>
+    <link rel="stylesheet" href="../css/min/all.min.css">
+    <!-- <script type="text/javascript" src="../js/hotcss.js"></script> -->
+    <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script>
+        var scaleRate = document.documentElement.clientWidth / 320 ;
+        document.querySelector('meta[name="viewport"]').setAttribute("content", "width=320, initial-scale=" + scaleRate + ", maximum-scale=" + scaleRate + ", user-scalable=no");
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="tab-cont">
+        <div class="header">
+            <span>OK COIN</span>
+            <div src="" alt="" class="action">
+                <img src="../imgs/setting.png" alt="" class="action-img">
+            </div>
+        </div>
+        <nav class="section-tabs current1">
+            <div class="tab">BTC</div>
+            <div class="tab">LTC</div>
+            <div class="tab">BTC合约</div>
+            <div class="tab">LTC合约</div>
+        </nav>
+
+        <div class="context-area with-section">
+            <div class="cont banner"><img class="banner-img" src="../imgs/banner.jpg" alt=""></div>
+            <div class="cont banner"><img class="banner-img" src="../imgs/chart.jpg" alt=""></div>
+            <div class="cont list mt-0">
+                <ul class="detail-list">
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                    <li class="item pd-lr bt-line">
+                        <div class="coin-name">OKCoin</div>
+                        <div class="pay-count">成交量 B715</div>
+                        <div class="price">
+                            <div class="usd">787.58</div>
+                            <div class="cny">5433.91</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tabs">
+        <div class="tab current"><img class="tab-img" src="../imgs/hangqing.png" alt=""><div>行情</div></div>
+        <div class="tab"><img class="tab-img" src="../imgs/qukuai.png" alt=""><div>区块</div></div>
+        <div class="tab"><img class="tab-img" src="../imgs/kuangchi.png" alt=""><div>矿池</div></div>
+        <div class="tab"><img class="tab-img" src="../imgs/wode.png" alt=""><div>我的</div></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+(function(){
+    var sectionTabs = document.querySelector('.section-tabs');
+    sectionTabs.addEventListener('click', function(e){
+        // e.stopPropagation();
+        var i = 0;
+        for(i; i<sectionTabs.children.length; i++){
+            if(sectionTabs.children[i] == e.target){break;}
+        }
+        sectionTabs.className = 'section-tabs current' + (i+1);
+
+    });
+})(document);
+
+</script>
+</html>

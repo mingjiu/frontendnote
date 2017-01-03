@@ -1,0 +1,38 @@
+.detail-list{
+    position: relative;
+}
+.detail-list .item{
+    padding: 1.6rem 0;
+    position: relative;
+}
+.detail-list .item .coin-name{
+    color: #4085af;
+    font-size: 2rem;
+}
+.detail-list .item .pay-count{
+    color: #8c9497;
+    font-size: 1.2rem;
+}
+.detail-list .item .price{
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    color: #8c9497;
+    text-align: right;
+}
+.detail-list .item .price .usd{
+    font-size: 1.8rem;
+}
+.detail-list .item .price .usd::after{
+    content: ' USD';
+    font-size: 1.2rem;
+}
+.detail-list .item .price .cny{
+    font-size: 1.2rem;
+}
+.detail-list .item .price .cny::after{
+    content: ' CNY';
+    font-size: 1.2rem;
+}

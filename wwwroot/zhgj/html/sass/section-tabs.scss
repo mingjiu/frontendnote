@@ -1,0 +1,32 @@
+.section-tabs{
+    background-color: #fff;
+    font-size: 1.4rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    display: inline-block;
+    width: 100%;
+    position: absolute;;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 4.4rem;
+}
+.section-tabs .tab{
+    width: 25%;
+    float: left;
+    color: #d7d9d6;
+}
+.section-tabs.current1 .tab:nth-child(1),.section-tabs.current2 .tab:nth-child(2),.section-tabs.current3 .tab:nth-child(3),.section-tabs.current4 .tab:nth-child(4){
+    color: #000;
+}
+.section-tabs::after{
+    content: '';
+    height: 0.1rem;
+    background-color: #3183cc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    transition: left 200ms;
+    -webkit-transition: left 200ms;
+}

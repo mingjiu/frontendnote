@@ -1,0 +1,39 @@
+.tab-cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 4.4rem;
+    font-size: 1.6rem;
+    overflow: scroll;
+}
+.tabs{
+    position: absolute;;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4.4rem;
+}
+.tabs .tab{
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 4.4rem;
+    overflow: hidden;
+    font-size: 1.2rem;
+    background-color: #3183cc;
+}
+.tabs .tab:active, .tabs .tab.current{
+    background-color: #1f6aab;
+    color: #fff;
+}
+.tabs .tab:active .tab-img, .tabs .tab.current .tab-img{
+    opacity: 0.5;
+}
+.tabs .tab .tab-img{
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+    margin: 0.2rem auto;
+}
