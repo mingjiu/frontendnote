@@ -1,0 +1,120 @@
+<!DOCTYPE html>   
+<html>   
+<head>   
+<meta charset="UTF-8">   
+<title>刮刮卡</title>   
+</head>   
+<style>
+.lucky-card-shade{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+</style>
+<body>   
+<div id="abc" style="font-size: 28px;text-align: center;width: 120px;height: 50px;line-height: 50px; position: relative;user-select: none;-webkit-user-select: none;"><span style="display: inline-block;width: 120px;height: 50px;">您中奖了</span></div>
+  
+</canvas>   
+  
+<script type="text/javascript">   
+function LuckCard(dom, config) {
+
+	var width = dom.clientWidth, height = dom.clientHeight, area = width * height, unSlideArea = 1, touchStatus = 0
+
+	// 判断客户端类型，设置刮卡事件
+	if ('ontouchstart' in window) {
+		var eventStart = 'touchstart', eventMove = 'touchmove', eventEnd = 'touchend'
+	} else {
+		var eventStart = 'mousedown', eventMove = 'mousemove', eventEnd = 'mouseup'
+	}
+
+	// 设置 canvas
+	var canvas = document.createElement('CANVAS')
+	canvas.setAttribute('width', width)
+	canvas.setAttribute('height', height)
+	canvas.className = config.canvasClass || 'lucky-card-shade'
+
+	// 设置刮刮卡蒙版图层
+	var ctx = canvas.getContext('2d')
+	ctx.fillStyle = config.unSlideBg || '#dde4e9'
+	ctx.fillRect(0, 0, width, height)
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.globalCompositeOperation = "destination-out";
+
+	canvas.addEventListener(eventStart, clear)
+	canvas.addEventListener(eventMove, clear)
+	canvas.addEventListener(eventEnd, clear)
+
+	this.canvas = canvas
+	this.ctx = ctx
+	dom.appendChild(canvas)
+
+	function clear(e){
+		if(e.type === eventStart && touchStatus === 0){
+			fillSlide(e.clientX || parseInt(e.touches[0].clientX), e.clientY || parseInt(e.touches[0].clientY))
+			touchStatus = 1
+		} else if(e.type === eventMove && touchStatus === 1) {
+			fillSlide(e.clientX || parseInt(e.touches[0].clientX), e.clientY || parseInt(e.touches[0].clientY))
+		} else if(e.type === eventEnd && touchStatus === 1){
+			unSlideArea = getUnslideArea()
+			if(unSlideArea < (config.areaToOpen || 0.5)){
+				ctx.fillRect(0, 0, width, height)
+				config.done && config.done()
+			} else {
+				config.continue && config.continue()
+			}
+			touchStatus = 0
+		}
+	}
+
+	function getUnslideArea(){
+		var allPx = ctx.getImageData(0, 0, width, height).data
+		var cRGB = colorRgb(config.unSlideBg || '#dde4e9')
+		var all = 0
+		for(var i = 0; i < area; i++){
+			var k = i * 4
+			if (allPx[k] === cRGB[0] && allPx[k+1] === cRGB[1] && allPx[k+2] === cRGB[2] && allPx[k+3] === 255){
+				all = all + 1
+			}
+		}
+		return all / (allPx.length / 4)
+	}
+
+	function fillSlide(x, y){
+		ctx.beginPath()
+		ctx.arc(x, y, (config.clearWeight || 15), 0, 2 * Math.PI)
+		ctx.fill()
+	}
+
+	function colorRgb(hex){  
+	  var sColor = hex.toLowerCase()
+	   
+	  if(sColor.length === 4){  
+	    var sColorNew = "#"
+	    for(var i=1; i<4; i+=1){  
+	      sColorNew += sColor.slice(i,i+1).concat(sColor.slice(i,i+1))
+	    }  
+	    sColor = sColorNew
+	  }  
+	  // 处理六位的颜色值
+	  var sColorChange = [];  
+	  for(var i=1; i<7; i+=2){  
+	    sColorChange.push(parseInt("0x"+sColor.slice(i,i+2)))
+	  }
+	  return sColorChange
+	}
+
+}
+
+var lc = new LuckCard(document.getElementById('abc'),{
+	done: function(){
+		console.log('你中奖了')
+	}
+})
+
+
+</script>  
+</body>   
+</html>  
